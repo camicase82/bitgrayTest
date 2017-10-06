@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('LoginService', LoginService);
 
     LoginService.$inject = ['$uibModal'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .constant('paginationConstants', {
             'itemsPerPage': 20
         });

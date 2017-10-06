@@ -16,14 +16,14 @@
 
 spring:
     application:
-        name: KiwiTelcoRechargesSystem
+        name: KiwiCell
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
         type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:KiwiTelcoRechargesSystem;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:KiwiCell;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -87,10 +87,11 @@ jhipster:
         base-url: http://127.0.0.1:8080
     security:
         authentication:
-            jwt:
-                secret: 333dea17a15bbce4a028d1010beb05cdc5747751
-                # Token is valid 24 hours
-                token-validity-in-seconds: 86400
+            oauth:
+                client-id: KiwiCellapp
+                client-secret: my-secret-token-to-change-in-production
+                # Token is valid 30 minutes
+                token-validity-in-seconds: 1800
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         logs: # Reports Dropwizard metrics in the logs

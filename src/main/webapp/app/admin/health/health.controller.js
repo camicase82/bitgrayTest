@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .controller('JhiHealthCheckController', JhiHealthCheckController);
 
     JhiHealthCheckController.$inject = ['JhiHealthService', '$uibModal'];

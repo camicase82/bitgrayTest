@@ -1,0 +1,23 @@
+{
+    "kiwiCellApp": {
+        "suscriberData" : {
+            "home": {
+                "title": "Suscriber Data",
+                "createLabel": "Crear nuevo Suscriber Data",
+                "createOrEditLabel": "Crear o editar Suscriber Data"
+            },
+            "created": "Un nuevo Suscriber Data ha sido creado con el identificador {{ param }}",
+            "updated": "Un Suscriber Data ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Suscriber Data ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Suscriber Data {{ id }}?"
+            },
+            "detail": {
+                "title": "Suscriber Data"
+            },
+            "firebReference": "Fireb Reference",
+            "phoneNumber": "Phone Number",
+            "balance": "Balance"
+        }
+    }
+}

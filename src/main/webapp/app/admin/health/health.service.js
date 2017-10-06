@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('JhiHealthService', JhiHealthService);
 
     JhiHealthService.$inject = ['$rootScope', '$http'];

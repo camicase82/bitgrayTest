@@ -1,11 +1,7 @@
-// Generated on 2017-09-28 using generator-jhipster 4.5.1
+// Generated on 2017-10-04 using generator-jhipster 4.5.1
 'use strict';
 
 var gulp = require('gulp'),
-    expect = require('gulp-expect-file'),
-    es = require('event-stream'),
-    flatten = require('gulp-flatten'),
-    sass = require('gulp-sass'),
     rev = require('gulp-rev'),
     templateCache = require('gulp-angular-templatecache'),
     htmlmin = require('gulp-htmlmin'),
@@ -63,22 +59,8 @@ gulp.task('images', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('sass', function () {
-    return es.merge(
-        gulp.src(config.sassSrc)
-        .pipe(plumber({errorHandler: handleErrors}))
-        .pipe(expect(config.sassSrc))
-        .pipe(sass({includePaths:config.bower}).on('error', sass.logError))
-        .pipe(gulp.dest(config.cssDir)),
-        gulp.src(config.bower + '**/fonts/**/*.{woff,woff2,svg,ttf,eot,otf}')
-        .pipe(plumber({errorHandler: handleErrors}))
-        .pipe(changed(config.app + 'content/fonts'))
-        .pipe(flatten())
-        .pipe(gulp.dest(config.app + 'content/fonts'))
-    );
-});
 
-gulp.task('styles', ['sass'], function () {
+gulp.task('styles', [], function () {
     return gulp.src(config.app + 'content/css')
         .pipe(browserSync.reload({stream: true}));
 });
@@ -103,7 +85,7 @@ gulp.task('html', function () {
     return gulp.src(config.app + 'app/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(templateCache({
-            module: 'kiwiTelcoRechargesSystemApp',
+            module: 'kiwiCellApp',
             root: 'app/',
             moduleSystem: 'IIFE'
         }))
@@ -112,7 +94,7 @@ gulp.task('html', function () {
 
 gulp.task('ngconstant:dev', function () {
     return ngConstant({
-        name: 'kiwiTelcoRechargesSystemApp',
+        name: 'kiwiCellApp',
         constants: {
             VERSION: util.parseVersion(),
             DEBUG_INFO_ENABLED: true
@@ -126,7 +108,7 @@ gulp.task('ngconstant:dev', function () {
 
 gulp.task('ngconstant:prod', function () {
     return ngConstant({
-        name: 'kiwiTelcoRechargesSystemApp',
+        name: 'kiwiCellApp',
         constants: {
             VERSION: util.parseVersion(),
             DEBUG_INFO_ENABLED: false
@@ -169,14 +151,14 @@ gulp.task('test', ['inject:test', 'ngconstant:dev'], function (done) {
 gulp.task('watch', function () {
     gulp.watch('bower.json', ['install']);
     gulp.watch(['gulpfile.js', 'pom.xml'], ['ngconstant:dev']);
-    gulp.watch(config.sassSrc, ['styles']);
+    gulp.watch(config.app + 'content/css/**/*.css', ['styles']);
     gulp.watch(config.app + 'content/images/**', ['images']);
     gulp.watch(config.app + 'app/**/*.js', ['inject:app']);
     gulp.watch([config.app + '*.html', config.app + 'app/**', config.app + 'i18n/**']).on('change', browserSync.reload);
 });
 
 gulp.task('install', function () {
-    runSequence(['inject:dep', 'ngconstant:dev'], 'sass', 'copy:languages', 'inject:app', 'inject:troubleshoot');
+    runSequence(['inject:dep', 'ngconstant:dev'], 'copy:languages', 'inject:app', 'inject:troubleshoot');
 });
 
 gulp.task('serve', ['install'], serve);

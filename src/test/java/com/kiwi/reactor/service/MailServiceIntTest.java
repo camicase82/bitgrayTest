@@ -1,6 +1,6 @@
 package com.kiwi.reactor.service;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;
@@ -29,7 +29,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 public class MailServiceIntTest {
 
     @Autowired

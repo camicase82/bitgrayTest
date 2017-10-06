@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .controller('LogsController', LogsController);
 
     LogsController.$inject = ['LogsService'];

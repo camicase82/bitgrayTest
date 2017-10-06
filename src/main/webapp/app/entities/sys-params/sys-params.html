@@ -1,0 +1,60 @@
+<div>
+    <h2 data-translate="kiwiCellApp.sysParams.home.title">Sys Params</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="sys-params.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="kiwiCellApp.sysParams.home.createLabel">
+                        Create new Sys Params
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="kiwiCellApp.sysParams.name">Name</span></th>
+                    <th><span data-translate="kiwiCellApp.sysParams.sValue">S Value</span></th>
+                    <th><span data-translate="kiwiCellApp.sysParams.nValue">N Value</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sysParams in vm.sysParams track by sysParams.id">
+                    <td><a ui-sref="sys-params-detail({id:sysParams.id})">{{sysParams.id}}</a></td>
+                    <td>{{sysParams.name}}</td>
+                    <td>{{sysParams.sValue}}</td>
+                    <td>{{sysParams.nValue}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="sys-params-detail({id:sysParams.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sys-params.edit({id:sysParams.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sys-params.delete({id:sysParams.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('Auth', Auth);
 
     Auth.$inject = ['$rootScope', '$state', '$sessionStorage', '$q', '$translate', 'Principal', 'AuthServerProvider', 'Account', 'LoginService', 'Register', 'Activate', 'Password', 'PasswordResetInit', 'PasswordResetFinish'];
@@ -16,7 +16,6 @@
             getPreviousState: getPreviousState,
             login: login,
             logout: logout,
-            loginWithToken: loginWithToken,
             resetPasswordFinish: resetPasswordFinish,
             resetPasswordInit: resetPasswordInit,
             resetPreviousState: resetPreviousState,
@@ -47,7 +46,7 @@
                 var isAuthenticated = Principal.isAuthenticated();
 
                 // an authenticated user can't access to login and register pages
-                if (isAuthenticated && $rootScope.toState.parent === 'account' && ($rootScope.toState.name === 'login' || $rootScope.toState.name === 'register' || $rootScope.toState.name === 'social-auth')) {
+                if (isAuthenticated && $rootScope.toState.parent === 'account' && ($rootScope.toState.name === 'login' || $rootScope.toState.name === 'register')) {
                     $state.go('home');
                 }
 
@@ -129,9 +128,6 @@
             return deferred.promise;
         }
 
-        function loginWithToken(jwt, rememberMe) {
-            return AuthServerProvider.loginWithToken(jwt, rememberMe);
-        }
 
         function logout () {
             AuthServerProvider.logout();

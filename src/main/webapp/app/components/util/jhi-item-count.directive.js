@@ -15,6 +15,6 @@
     };
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .component('jhiItemCount', jhiItemCount);
 })();

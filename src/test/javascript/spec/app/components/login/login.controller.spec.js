@@ -2,7 +2,7 @@
 
 describe('Controller Tests', function () {
 
-    beforeEach(module('kiwiTelcoRechargesSystemApp'));
+    beforeEach(module('kiwiCellApp'));
 
     describe('LoginController', function () {
         var $scope, authService;

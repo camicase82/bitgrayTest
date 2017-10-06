@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('authInterceptor', authInterceptor);
 
     authInterceptor.$inject = ['$rootScope', '$q', '$location', '$localStorage', '$sessionStorage'];
@@ -18,8 +18,8 @@
             /*jshint camelcase: false */
             config.headers = config.headers || {};
             var token = $localStorage.authenticationToken || $sessionStorage.authenticationToken;
-            if (token) {
-                config.headers.Authorization = 'Bearer ' + token;
+            if (token && token.expires_at && token.expires_at > new Date().getTime()) {
+                config.headers.Authorization = 'Bearer ' + token.access_token;
             }
             return config;
         }

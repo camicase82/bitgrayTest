@@ -41,7 +41,16 @@ function languages() {
 }
 
 function fonts() {
-    return es.merge(
+    return es.merge(gulp.src(config.bower + 'bootstrap/fonts/*.*')
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(changed(config.dist + 'content/fonts/'))
+        .pipe(rev())
+        .pipe(gulp.dest(config.dist + 'content/fonts/'))
+        .pipe(rev.manifest(config.revManifest, {
+            base: config.dist,
+            merge: true
+        }))
+        .pipe(gulp.dest(config.dist)),
         gulp.src(config.app + 'content/**/*.{woff,woff2,svg,ttf,eot,otf}')
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(changed(config.dist + 'content/fonts/'))

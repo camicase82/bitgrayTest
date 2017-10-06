@@ -37,13 +37,7 @@ function vendor() {
         }))
         .pipe(gulp.dest(config.app));
 
-    return es.merge(stream, gulp.src(config.sassVendor)
-        .pipe(plumber({errorHandler: handleErrors}))
-        .pipe(inject(gulp.src(bowerFiles({filter:['**/*.{scss,sass}']}), {read: false}), {
-            name: 'bower',
-            relative: true
-        }))
-        .pipe(gulp.dest(config.scss)));
+    return stream;
 }
 
 function test() {

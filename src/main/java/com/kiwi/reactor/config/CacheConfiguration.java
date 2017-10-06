@@ -40,6 +40,14 @@ public class CacheConfiguration {
             cm.createCache(com.kiwi.reactor.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.kiwi.reactor.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.kiwi.reactor.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.SuscriberData.class.getName(), jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.Recharges.class.getName(), jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.Recharges.class.getName() + ".suscribers", jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.Recharges.class.getName() + ".proms", jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.Promotions.class.getName(), jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.SysParams.class.getName(), jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.SuscriberData.class.getName() + ".suscribers", jcacheConfiguration);
+            cm.createCache(com.kiwi.reactor.domain.Promotions.class.getName() + ".proms", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

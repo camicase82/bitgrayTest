@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="kiwiCellApp.recharges.home.title">Recharges</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="recharges.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="kiwiCellApp.recharges.home.createLabel">
+                        Create new Recharges
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="kiwiCellApp.recharges.value">Value</span></th>
+                    <th><span data-translate="kiwiCellApp.recharges.date">Date</span></th>
+                    <th><span data-translate="kiwiCellApp.recharges.disccount">Disccount</span></th>
+                    <th><span data-translate="kiwiCellApp.recharges.awardedSecs">Awarded Secs</span></th>
+                    <th><span data-translate="kiwiCellApp.recharges.suscriber">Suscriber</span></th>
+                    <th><span data-translate="kiwiCellApp.recharges.promotions">Promotions</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="recharges in vm.recharges track by recharges.id">
+                    <td><a ui-sref="recharges-detail({id:recharges.id})">{{recharges.id}}</a></td>
+                    <td>{{recharges.value}}</td>
+                        <td>{{recharges.date | date:'mediumDate'}}</td>
+                    <td>{{recharges.disccount}}</td>
+                    <td>{{recharges.awardedSecs}}</td>
+                    <td>
+                        <a ui-sref="suscriber-data-detail({id:recharges.suscriber.id})">{{recharges.suscriber.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="promotions-detail({id:recharges.promotions.id})">{{recharges.promotions.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="recharges-detail({id:recharges.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="recharges.edit({id:recharges.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="recharges.delete({id:recharges.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

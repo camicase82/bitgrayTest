@@ -1,0 +1,102 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myRechargesLabel" data-translate="kiwiCellApp.recharges.home.createOrEditLabel">Create or edit a Recharges</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.recharges.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.recharges.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kiwiCellApp.recharges.value" for="field_value">Value</label>
+            <input type="number" class="form-control" name="value" id="field_value"
+                    ng-model="vm.recharges.value"
+                    required/>
+            <div ng-show="editForm.value.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.value.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.value.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kiwiCellApp.recharges.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.recharges.date" is-open="vm.datePickerOpenStatus.date"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.date.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.date.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kiwiCellApp.recharges.disccount" for="field_disccount">Disccount</label>
+            <input type="number" class="form-control" name="disccount" id="field_disccount"
+                    ng-model="vm.recharges.disccount"
+                    required/>
+            <div ng-show="editForm.disccount.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.disccount.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.disccount.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kiwiCellApp.recharges.awardedSecs" for="field_awardedSecs">Awarded Secs</label>
+            <input type="number" class="form-control" name="awardedSecs" id="field_awardedSecs"
+                    ng-model="vm.recharges.awardedSecs"
+                    required/>
+            <div ng-show="editForm.awardedSecs.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.awardedSecs.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.awardedSecs.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="kiwiCellApp.recharges.suscriber" for="field_suscriber">Suscriber</label>
+            <select class="form-control" id="field_suscriber" name="suscriber" ng-model="vm.recharges.suscriber" ng-options="suscriberData as suscriberData.id for suscriberData in vm.suscribers | orderBy:'id' track by suscriberData.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="kiwiCellApp.recharges.promotions" for="field_promotions">Promotions</label>
+            <select class="form-control" id="field_promotions" name="promotions" ng-model="vm.recharges.promotions" ng-options="promotions as promotions.id for promotions in vm.promotions track by promotions.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

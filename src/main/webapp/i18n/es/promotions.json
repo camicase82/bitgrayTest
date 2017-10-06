@@ -1,0 +1,25 @@
+{
+    "kiwiCellApp": {
+        "promotions" : {
+            "home": {
+                "title": "Promotions",
+                "createLabel": "Crear nuevo Promotions",
+                "createOrEditLabel": "Crear o editar Promotions"
+            },
+            "created": "Un nuevo Promotions ha sido creado con el identificador {{ param }}",
+            "updated": "Un Promotions ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Promotions ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Promotions {{ id }}?"
+            },
+            "detail": {
+                "title": "Promotions"
+            },
+            "configurationDate": "Configuration Date",
+            "test": "Test",
+            "module": "Module",
+            "application": "Application",
+            "prom": "Prom"
+        }
+    }
+}

@@ -1,4 +1,4 @@
-beforeEach(module('kiwiTelcoRechargesSystemApp'));
+beforeEach(module('kiwiCellApp'));
 /**
  * returns a function whose angular will be replaced
  * with whatever mock was supplied.

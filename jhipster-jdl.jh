@@ -1,0 +1,38 @@
+entity SuscriberData {
+	firebReference String required,
+    phoneNumber String required,
+    balance Long
+}
+
+entity Recharges {
+	value Long required,
+    date LocalDate required,
+    disccount Double required,
+    awardedSecs Long required
+}
+
+entity Promotions {
+	configurationDate LocalDate required,
+    test Boolean required,
+    module String required,
+    application LocalDate required,
+}
+
+entity SysParams {
+	name String required,
+    sValue String required,
+    nValue Double required
+}
+
+relationship OneToOne{
+	Recharges{suscriber} to SuscriberData
+}
+
+relationship OneToMany {
+	Promotions {prom} to Recharges
+}
+
+
+//--------------------------
+
+

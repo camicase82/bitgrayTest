@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('AuditsService', AuditsService);
 
     AuditsService.$inject = ['$resource'];

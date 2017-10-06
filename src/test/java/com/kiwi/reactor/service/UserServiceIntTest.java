@@ -1,6 +1,6 @@
 package com.kiwi.reactor.service;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.domain.User;
 import com.kiwi.reactor.config.Constants;
 import com.kiwi.reactor.repository.UserRepository;
@@ -29,7 +29,7 @@ import static org.assertj.core.api.Assertions.*;
  * @see UserService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 @Transactional
 public class UserServiceIntTest {
 

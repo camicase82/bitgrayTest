@@ -1,6 +1,6 @@
 package com.kiwi.reactor.web.rest;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.config.audit.AuditEventConverter;
 import com.kiwi.reactor.domain.PersistentAuditEvent;
 import com.kiwi.reactor.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 @Transactional
 public class AuditResourceIntTest {
 

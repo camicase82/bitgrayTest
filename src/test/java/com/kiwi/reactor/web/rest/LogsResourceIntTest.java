@@ -1,6 +1,6 @@
 package com.kiwi.reactor.web.rest;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.web.rest.vm.LoggerVM;
 import ch.qos.logback.classic.AsyncAppender;
 import ch.qos.logback.classic.LoggerContext;
@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see LogsResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 public class LogsResourceIntTest {
 
     private MockMvc restLogsMockMvc;

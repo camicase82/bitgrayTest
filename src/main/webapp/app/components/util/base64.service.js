@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('Base64', Base64);
 
     function Base64 () {

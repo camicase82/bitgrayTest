@@ -1,6 +1,6 @@
 package com.kiwi.reactor.web.rest;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.domain.Authority;
 import com.kiwi.reactor.domain.User;
 import com.kiwi.reactor.repository.AuthorityRepository;
@@ -48,7 +48,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AccountResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 public class AccountResourceIntTest {
 
     @Autowired

@@ -1,0 +1,23 @@
+{
+    "kiwiCellApp": {
+        "sysParams" : {
+            "home": {
+                "title": "Sys Params",
+                "createLabel": "Crear nuevo Sys Params",
+                "createOrEditLabel": "Crear o editar Sys Params"
+            },
+            "created": "Un nuevo Sys Params ha sido creado con el identificador {{ param }}",
+            "updated": "Un Sys Params ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Sys Params ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Sys Params {{ id }}?"
+            },
+            "detail": {
+                "title": "Sys Params"
+            },
+            "name": "Name",
+            "sValue": "S Value",
+            "nValue": "N Value"
+        }
+    }
+}

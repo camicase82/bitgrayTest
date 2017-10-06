@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];

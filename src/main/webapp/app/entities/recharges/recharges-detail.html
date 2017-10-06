@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="kiwiCellApp.recharges.detail.title">Recharges</span> {{vm.recharges.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="kiwiCellApp.recharges.value">Value</span></dt>
+        <dd>
+            <span>{{vm.recharges.value}}</span>
+        </dd>
+        <dt><span data-translate="kiwiCellApp.recharges.date">Date</span></dt>
+        <dd>
+            <span>{{vm.recharges.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="kiwiCellApp.recharges.disccount">Disccount</span></dt>
+        <dd>
+            <span>{{vm.recharges.disccount}}</span>
+        </dd>
+        <dt><span data-translate="kiwiCellApp.recharges.awardedSecs">Awarded Secs</span></dt>
+        <dd>
+            <span>{{vm.recharges.awardedSecs}}</span>
+        </dd>
+        <dt><span data-translate="kiwiCellApp.recharges.suscriber">Suscriber</span></dt>
+        <dd>
+            <a ui-sref="suscriber-data-detail({id:vm.recharges.suscriber.id})">{{vm.recharges.suscriber.id}}</a>
+        </dd>
+        <dt><span data-translate="kiwiCellApp.recharges.promotions">Promotions</span></dt>
+        <dd>
+            <a ui-sref="promotions-detail({id:vm.recharges.promotions.id})">{{vm.recharges.promotions.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="recharges-detail.edit({id:vm.recharges.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

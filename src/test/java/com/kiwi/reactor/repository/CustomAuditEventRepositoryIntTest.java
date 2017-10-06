@@ -1,6 +1,6 @@
 package com.kiwi.reactor.repository;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.config.Constants;
 import com.kiwi.reactor.config.audit.AuditEventConverter;
 import com.kiwi.reactor.domain.PersistentAuditEvent;
@@ -31,7 +31,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see CustomAuditEventRepository
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIntTest {
 

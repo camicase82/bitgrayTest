@@ -10,15 +10,15 @@ public final class HeaderUtil {
 
     private static final Logger log = LoggerFactory.getLogger(HeaderUtil.class);
 
-    private static final String APPLICATION_NAME = "kiwiTelcoRechargesSystemApp";
+    private static final String APPLICATION_NAME = "kiwiCellApp";
 
     private HeaderUtil() {
     }
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-kiwiTelcoRechargesSystemApp-alert", message);
-        headers.add("X-kiwiTelcoRechargesSystemApp-params", param);
+        headers.add("X-kiwiCellApp-alert", message);
+        headers.add("X-kiwiCellApp-params", param);
         return headers;
     }
 
@@ -37,8 +37,8 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity processing failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-kiwiTelcoRechargesSystemApp-error", "error." + errorKey);
-        headers.add("X-kiwiTelcoRechargesSystemApp-params", entityName);
+        headers.add("X-kiwiCellApp-error", "error." + errorKey);
+        headers.add("X-kiwiCellApp-params", entityName);
         return headers;
     }
 }

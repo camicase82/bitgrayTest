@@ -1,0 +1,26 @@
+{
+    "kiwiCellApp": {
+        "recharges" : {
+            "home": {
+                "title": "Recharges",
+                "createLabel": "Create a new Recharges",
+                "createOrEditLabel": "Create or edit a Recharges"
+            },
+            "created": "A new Recharges is created with identifier {{ param }}",
+            "updated": "A Recharges is updated with identifier {{ param }}",
+            "deleted": "A Recharges is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Recharges {{ id }}?"
+            },
+            "detail": {
+                "title": "Recharges"
+            },
+            "value": "Value",
+            "date": "Date",
+            "disccount": "Disccount",
+            "awardedSecs": "Awarded Secs",
+            "suscriber": "Suscriber",
+            "promotions": "Promotions"
+        }
+    }
+}

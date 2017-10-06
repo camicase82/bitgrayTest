@@ -1,6 +1,6 @@
 package com.kiwi.reactor.web.rest;
 
-import com.kiwi.reactor.KiwiTelcoRechargesSystemApp;
+import com.kiwi.reactor.KiwiCellApp;
 import com.kiwi.reactor.domain.Authority;
 import com.kiwi.reactor.domain.User;
 import com.kiwi.reactor.repository.UserRepository;
@@ -47,7 +47,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KiwiTelcoRechargesSystemApp.class)
+@SpringBootTest(classes = KiwiCellApp.class)
 public class UserResourceIntTest {
 
     private static final Long DEFAULT_ID = 1L;

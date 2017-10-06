@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('kiwiTelcoRechargesSystemApp')
+        .module('kiwiCellApp')
         .factory('ProfileService', ProfileService);
 
     ProfileService.$inject = ['$http'];
